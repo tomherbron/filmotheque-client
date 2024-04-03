@@ -1,0 +1,31 @@
+<div class="flex flex-wrap justify-center">
+  <ng-container *ngIf="movies">
+    <div *ngFor="let movie of movies" class="movie-card max-w-sm relative p-6 m-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-700 dark:border-gray-700">
+      <div class="movie-content">
+        <a href="#">
+          <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ movie.title }}</h5>
+        </a>
+        <div class="mb-2 text-white italic">{{ movie.genre.title }}, {{ movie.year }}</div>
+        <div *ngIf="movie.director">
+          <span class="font-bold text-white">Director : </span>
+          <span class="text-white">{{ movie.director.firstName }} {{ movie.director.lastName }}</span>
+        </div>
+        <div *ngIf="movie.actors && movie.actors.length > 0" class="mb-3">
+          <p class="font-bold text-white">Actors:</p>
+          <ul>
+            <li class="text-white" *ngFor="let actor of movie.actors">{{ actor.firstName }} {{ actor.lastName }}</li>
+          </ul>
+        </div>
+        <a [routerLink]="['/details', movie.id]" class="details-button inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-teal-500 rounded-lg hover:bg-teal-800  focus:ring-4 focus:outline-none focus:bg-teal-300 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
+          Details
+          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+

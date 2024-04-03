@@ -1,10 +1,12 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {HomeComponent} from "./pages/home/home.component";
+import {MovieListComponent} from "./pages/movie-list/movie-list.component";
+import {MovieDetailsComponent} from "./pages/movie-details/movie-details.component";
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: MovieListComponent },
+  { path: 'details/:id', component: MovieDetailsComponent }
 ]
 
 @NgModule({

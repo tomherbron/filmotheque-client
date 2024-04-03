@@ -19,4 +19,12 @@ export class HttpService {
     return this.httpClient.post(`${this.baseUrl}/${endpoint}`, data)
   }
 
+  put(endpoint: string, data: any): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/${endpoint}`, data)
+  }
+
+  delete(endpoint: string, data: any): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/${endpoint}`, data)
+  }
+
 }
