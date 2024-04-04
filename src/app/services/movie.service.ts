@@ -20,12 +20,12 @@ export class MovieService {
     return this.httpService.get(`${this.movieEndpoint}/${movieId}`);
   }
 
-  addMovie(movie: Movie): Observable<any> {
-    return this.httpService.post(this.movieEndpoint, movie);
+  addMovie(movieData: Movie): Observable<any> {
+    return this.httpService.post(this.movieEndpoint, movieData);
   }
 
-  updateMovie(movieId: number, data: any): Observable<any> {
-    return this.httpService.post(this.movieEndpoint, data);
+  updateMovie(movieId: number, movieData: any): Observable<any> {
+    return this.httpService.post(this.movieEndpoint, movieData);
   }
 
   deleteMovie(movieId: number): Observable<any> {
