@@ -1,5 +1,5 @@
 <div class="flex flex-wrap justify-center mt-6">
-  <div class="p-6 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+  <div class="pl-10 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
          ngSrc="././assets/img/jurassic-park-affiche.jpg" alt="" height="328" width="222">
     <div *ngIf="currentMovie" class="flex flex-col justify-between p-8 leading-normal">
@@ -7,15 +7,14 @@
         {{ currentMovie.title }}
       </h5>
       <p class="mb-2 italic text-gray-700 dark:text-gray-400">{{ currentMovie.genre.title }}, {{ currentMovie.year }}</p>
-      <div>
-        <div class="stars">
-          <span class="flex mb-2" *ngFor="let star of starsArray()" [ngClass]="{ 'filled': star <= computeMovieRatings() }" style="display: inline-block;">
+        <div class="flex mb-2">
+          <p class="text-white font-bold">Rating :</p>
+          <span class="pt-1" *ngFor="let star of starsArray()" [ngClass]="{ 'filled': star <= computeMovieRatings() }" style="display: inline-block;">
             <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
             </svg>
           </span>
         </div>
-      </div>
       <p class="font-normal text-white">
         <span class="font-bold text-white">Duration</span> : {{ currentMovie.duration }} minutes
       </p>
@@ -32,6 +31,13 @@
       <p class="font-normal text-white">
         <span class="font-bold text-white">Synopsis</span> : {{ currentMovie.synopsis }}
       </p>
+      <button class="bg-teal-500 hover:bg-teal-600 text-white font-normal px-8 py-2 rounded-lg focus:outline-none focus:shadow-outline mt-4 mx-auto">
+        <span class="flex items-center">Update
+          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>

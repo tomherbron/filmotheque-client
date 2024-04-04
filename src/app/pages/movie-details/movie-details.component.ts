@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {MovieService} from "../../services/movie.service";
 import {Movie} from "../../interfaces/Movie";
 import {NgClass, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
@@ -11,7 +11,8 @@ import {NgClass, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
     NgIf,
     NgOptimizedImage,
     NgForOf,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.css'
