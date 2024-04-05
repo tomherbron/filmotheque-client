@@ -1,35 +1,35 @@
 <div class="flex flex-wrap justify-center mt-6">
-  <div class="pl-10 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+  <div class="pl-10 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl">
     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
          ngSrc="././assets/img/jurassic-park-affiche.jpg" alt="" height="328" width="222">
     <div *ngIf="currentMovie" class="flex flex-col justify-between p-8 leading-normal">
-      <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 class="text-2xl font-bold tracking-tight text-gray-900">
         {{ currentMovie.title }}
       </h5>
-      <p class="mb-2 italic text-gray-700 dark:text-gray-400">{{ currentMovie.genre.title }}, {{ currentMovie.year }}</p>
+      <p class="mb-2 italic text-gray-400">{{ currentMovie.genre.title }}, {{ currentMovie.year }}</p>
         <div class="flex mb-2">
-          <p class="text-white font-bold">Rating :</p>
+          <p class="text-gray-700 font-bold">Rating :</p>
           <span class="pt-1" *ngFor="let star of starsArray()" [ngClass]="{ 'filled': star <= computeMovieRatings() }" style="display: inline-block;">
             <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
             </svg>
           </span>
         </div>
-      <p class="font-normal text-white">
-        <span class="font-bold text-white">Duration</span> : {{ currentMovie.duration }} minutes
+      <p class="font-normal text-gray-700 ">
+        <span class="font-bold text-gray-700 ">Duration</span> : {{ currentMovie.duration }} minutes
       </p>
-      <p class="font-normal text-white">
-        <span class="font-bold text-white">Director</span> : {{ currentMovie.director.firstName }} {{ currentMovie.director.lastName }}
+      <p class="font-normal text-gray-700 ">
+        <span class="font-bold text-gray-700 ">Director</span> : {{ currentMovie.director.firstName }} {{ currentMovie.director.lastName }}
       </p>
-      <p *ngIf="currentMovie.actors" class="font-normal text-white">
-        <span class="font-bold text-white">Actors</span> :
+      <p *ngIf="currentMovie.actors" class="font-normal text-gray-700 ">
+        <span class="font-bold text-gray-700 ">Actors</span> :
         <ng-container *ngFor="let actor of currentMovie.actors; let last = last">
           {{ actor.firstName }} {{ actor.lastName }}
           <span *ngIf="!last">, </span>
         </ng-container>
       </p>
-      <p class="font-normal text-white">
-        <span class="font-bold text-white">Synopsis</span> : {{ currentMovie.synopsis }}
+      <p class="font-normal text-gray-700 ">
+        <span class="font-bold text-gray-700 ">Synopsis</span> : {{ currentMovie.synopsis }}
       </p>
       <button class="bg-yellow-400 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-2 rounded-lg focus:outline-none focus:shadow-outline mt-4 mx-auto">
         <span class="flex items-center">Update

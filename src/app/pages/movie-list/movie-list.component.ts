@@ -1,7 +1,6 @@
-import {Component, NgIterable, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Movie} from '../../interfaces/Movie';
 import {MovieService} from "../../services/movie.service";
-import {Observable} from "rxjs";
 import {NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {MovieDetailsComponent} from "../movie-details/movie-details.component";

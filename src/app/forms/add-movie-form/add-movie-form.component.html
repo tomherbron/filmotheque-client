@@ -1,1 +1,42 @@
-<p>add-movie-form works!</p>
+<div class="bg-white h-screen">
+  <div class="container mx-auto p-5 py-10">
+    <div class="flex flex-row justify-items-center">
+      <div class="flex flex-col justify-items-start bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <h2 class="text-4xl pt-1 pb-5">Create a new movie</h2>
+        <form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+          <input
+            type="text"
+            id="title"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="title"
+            placeholder="Title" />
+
+          <input
+            type="text"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="year"
+            placeholder="Year" />
+
+          <input
+            type="text"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="duration"
+            placeholder="Duration" />
+
+          <input
+            type="text"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="synopsis"
+            placeholder="Synopsis" />
+
+          <div class="flex flex-col items-center justify-items-center">
+            <button
+              type="submit"
+              class="w-1/6 text-center py-3 rounded-lg bg-yellow-400 hover:bg-yellow-600 text-gray-800 font-semibold focus:outline-none my-1"
+            >Add movie</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
