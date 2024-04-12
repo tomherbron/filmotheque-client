@@ -5,12 +5,16 @@ import {MovieListComponent} from "./pages/movie-list/movie-list.component";
 import {MovieDetailsComponent} from "./pages/movie-details/movie-details.component";
 import {AddMovieComponent} from "./pages/add-movie/add-movie.component";
 import {AddMovieFormComponent} from "./forms/add-movie-form/add-movie-form.component";
+import {authGuard} from "./auth/auth.guard";
+import {RegistrationComponent} from "./pages/registration/registration.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 export const routes: Routes = [
-  { path: '', component: MovieListComponent },
-  { path: 'details/:id', component: MovieDetailsComponent },
-  { path: 'add-movie', component: AddMovieComponent },
-  { path: 'add-movie-form', component: AddMovieFormComponent }
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: MovieListComponent, canActivate: [authGuard] },
+  { path: 'details/:id', component: MovieDetailsComponent, canActivate: [authGuard] },
+  { path: 'add-movie', component: AddMovieComponent, canActivate: [authGuard] },
 ]
 
 @NgModule({

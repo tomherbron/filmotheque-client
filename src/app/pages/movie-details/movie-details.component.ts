@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
-import {MovieService} from "../../services/movie.service";
+import {MovieService} from "../../services/api/movie.service";
 import {Movie} from "../../interfaces/Movie";
 import {NgClass, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 

@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
-import {MovieService} from "../../services/movie.service";
+import {MovieService} from "../../services/api/movie.service";
 import {Router} from "@angular/router";
-import {GenreService} from "../../services/genre.service";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-add-movie-form',
@@ -18,11 +16,9 @@ import {Observable} from "rxjs";
 export class AddMovieFormComponent implements OnInit {
 
   movieForm: FormGroup;
-  genres: Observable<any>;
 
   constructor(private toasterService: ToastrService,
-              private movieService: MovieService, private router: Router, private genreService: GenreService) {
-    this.genres = this.fetchAllGenres();
+              private movieService: MovieService, private router: Router) {
     this.movieForm = new FormGroup({
       title: new FormControl('', [Validators.required]),
       year: new FormControl('', [Validators.required, Validators.min(1900)]),
@@ -35,10 +31,6 @@ export class AddMovieFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  fetchAllGenres(): Observable<any> {
-    return this.genreService.fetchAllGenres();
   }
 
   addMovie(): void {
