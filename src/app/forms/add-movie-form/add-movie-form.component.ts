@@ -13,11 +13,11 @@ import {Router} from "@angular/router";
   templateUrl: './add-movie-form.component.html',
   styleUrl: './add-movie-form.component.css'
 })
-export class AddMovieFormComponent implements OnInit {
+export class AddMovieFormComponent {
 
   movieForm: FormGroup;
 
-  constructor(private toasterService: ToastrService,
+  constructor(private toastrService: ToastrService,
               private movieService: MovieService, private router: Router) {
     this.movieForm = new FormGroup({
       title: new FormControl('', [Validators.required]),
@@ -30,22 +30,19 @@ export class AddMovieFormComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
-
   addMovie(): void {
     if (this.movieForm.valid) {
       const formData = this.movieForm.value;
       this.movieService.addMovie(formData).subscribe(response => {
         if (response.status === 'success') {
           this.router.navigateByUrl("/")
-            .then(r => this.toasterService.success("Movie has been added!"));
+            .then(r => this.toastrService.success("Movie has been added!"));
         } else {
-          this.toasterService.error("Movie couldn't be added.");
+          this.toastrService.error("Movie couldn't be added.");
         }
       });
     } else {
-      this.toasterService.error("Add movie form is invalid.");
+      this.toastrService.error("Add movie form is invalid.");
     }
   }
 }

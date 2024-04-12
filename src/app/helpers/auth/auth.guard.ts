@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from '@angular/router';
 import {inject} from "@angular/core";
-import {TokenService} from "../services/auth/token.service";
+import {TokenService} from "../../services/auth/token.service";
 
 
 export const authGuard: CanActivateFn = (route:ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean => {

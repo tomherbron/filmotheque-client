@@ -1,0 +1,54 @@
+<div class="bg-white min-h-screen flex flex-col justify-center items-center">
+  <div class="container p-3 py-5 max-w-md w-full">
+    <div class="flex flex-row justify-items-center">
+      <div class="flex flex-col justify-items-start bg-white px-6 py-8 rounded shadow-lg text-black w-full">
+        <h2 class="text-4xl pt-1 pb-5 text-center text-gray-800">Filmothèque.io | Register</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+          <input
+            type="text"
+            id="title"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="firstName"
+            placeholder="First name" />
+
+          <input
+            type="text"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="lastName"
+            placeholder="Last name" />
+
+          <input
+            type="text"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="username"
+            placeholder="Username" />
+
+          <input
+            type="email"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="email"
+            placeholder="E-mail" />
+
+          <input
+            type="password"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="password"
+            placeholder="Password" />
+
+          <input
+            type="password"
+            class="block border border-grey-light w-full p-3 rounded mb-4"
+            formControlName="passwordConf"
+            placeholder="Confirm your password" />
+
+          <div class="flex flex-col items-center justify-items-center">
+            <button
+              type="submit"
+              class="w-1/2 text-center py-3 rounded-lg bg-yellow-400 hover:bg-yellow-600 text-gray-800 font-semibold focus:outline-none my-1"
+            >Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

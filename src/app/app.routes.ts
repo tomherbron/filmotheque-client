@@ -4,8 +4,7 @@ import {CommonModule} from "@angular/common";
 import {MovieListComponent} from "./pages/movie-list/movie-list.component";
 import {MovieDetailsComponent} from "./pages/movie-details/movie-details.component";
 import {AddMovieComponent} from "./pages/add-movie/add-movie.component";
-import {AddMovieFormComponent} from "./forms/add-movie-form/add-movie-form.component";
-import {authGuard} from "./auth/auth.guard";
+import {authGuard} from "./helpers/auth/auth.guard";
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import {LoginComponent} from "./pages/login/login.component";
 
