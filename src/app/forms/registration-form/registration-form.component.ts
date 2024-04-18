@@ -40,8 +40,7 @@ export class RegistrationFormComponent {
     if (this.registrationForm.valid){
       const formData = this.registrationForm.value;
       this.authService.registerUser(formData).subscribe(response => {
-        console.log(response.header);
-        if (response.status === 200){
+        if (response.statusCode === 200){
           this.router.navigateByUrl("/")
             .then(r => this.toastrService.success("Successfully registered!"));
         } else {
