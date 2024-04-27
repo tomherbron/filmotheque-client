@@ -8,7 +8,7 @@ import {
   ValidatorFn,
   Validators
 } from "@angular/forms";
-import {AuthService} from "../../services/api/auth.service";
+import {AuthService} from "../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 
@@ -29,6 +29,8 @@ export class RegistrationFormComponent {
   constructor(private authService: AuthService, private router: Router, private toastrService: ToastrService) {
     this.registrationForm = new FormGroup({firstName: new FormControl('', [Validators.required, Validators.minLength(3)]),
       lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      gender: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      birthDate: new FormControl('', [Validators.required]),
       username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),

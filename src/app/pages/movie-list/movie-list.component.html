@@ -6,7 +6,7 @@
         <a href="#">
           <h5 class="text-2xl font-bold tracking-tight text-gray-900">{{ movie.title }}</h5>
         </a>
-        <div class="mb-2 text-gray-700 italic">{{ movie.genre.title }}, {{ movie.year }}</div>
+        <div class="mb-2 text-gray-700 italic">{{ movie.genre }}, {{ movie.year }}</div>
         <div *ngIf="movie.director">
           <span class="font-bold text-gray-700">Director : </span>
           <span class="text-gray-700">{{ movie.director.firstName }} {{ movie.director.lastName }}</span>

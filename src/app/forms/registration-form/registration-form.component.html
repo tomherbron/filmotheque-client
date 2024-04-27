@@ -1,54 +1,115 @@
-<div class="bg-white min-h-screen flex flex-col justify-center items-center">
-  <div class="container p-3 py-5 max-w-md w-full">
-    <div class="flex flex-row justify-items-center">
-      <div class="flex flex-col justify-items-start bg-white px-6 py-8 rounded shadow-lg text-black w-full">
-        <h2 class="text-4xl pt-1 pb-5 text-center text-gray-800">Register</h2>
-        <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
-          <input
-            type="text"
-            id="title"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
-            formControlName="firstName"
-            placeholder="First name" />
-
-          <input
-            type="text"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
-            formControlName="lastName"
-            placeholder="Last name" />
-
-          <input
-            type="text"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
-            formControlName="username"
-            placeholder="Username" />
-
+<div
+  class="relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8
+  shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10 mt-10">
+  <div class="w-full">
+    <div class="text-center">
+      <h1 class="text-3xl font-semibold text-gray-900">Sign Up</h1>
+      <p class="mt-2 text-gray-500">Sign up below to create your account</p>
+    </div>
+    <div class="mt-5">
+      <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+        <div class="relative mt-6">
+          <input type="text"
+                 id="firstName"
+                 class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
+                 formControlName="firstName"
+                 placeholder="First name" />
+          <label for="firstName" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">First Name</label>
+        </div>
+        <div class="relative mt-6">
+          <input type="text"
+                 id="lastName"
+                 class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
+                 formControlName="lastName"
+                 placeholder="Last name"/>
+          <label for="lastName" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Last Name</label>
+        </div>
+        <div class="relative mt-6">
+          <input type="text"
+                 id="gender"
+                 class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
+                 formControlName="gender"
+                 placeholder="Gender"/>
+          <label for="lastName" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Gender</label>
+        </div>
+        <div class="relative mt-6">
+          <input type="date"
+                 id="birthDate"
+                 class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
+                 formControlName="birthDate"
+                 placeholder="Date of birth"/>
+          <label for="lastName" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Date of Birth</label>
+        </div>
+        <div class="relative mt-6">
+          <input type="text"
+                 id="username"
+                 class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
+                 formControlName="username"
+                 placeholder="Username"/>
+          <label for="username" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Username</label>
+        </div>
+        <div class="relative mt-6">
           <input
             type="email"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
+            id="email"
+            class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
             formControlName="email"
             placeholder="E-mail" />
-
+          <label for="email" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2
+          transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Email Address</label>
+        </div>
+        <div class="relative mt-6">
           <input
             type="password"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
+            id="password"
+            class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
             formControlName="password"
             placeholder="Password" />
-
+          <label for="password" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+          text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+          peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+          peer-focus:text-sm peer-focus:text-gray-800">Password</label>
+        </div>
+        <div class="relative mt-6">
           <input
             type="password"
-            class="block border border-grey-light w-full p-3 rounded mb-4"
+            id="passwordConf"
+            class="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA"
             formControlName="passwordConf"
             placeholder="Confirm your password" />
-
-          <div class="flex flex-col items-center justify-items-center">
-            <button
-              type="submit"
-              class="w-1/2 text-center py-3 rounded-lg bg-yellow-400 hover:bg-yellow-600 text-gray-800 font-semibold focus:outline-none my-1"
-            >Register</button>
-          </div>
-        </form>
-      </div>
+          <label for="password" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform
+           text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2
+           peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0
+           peer-focus:text-sm peer-focus:text-gray-800">Confirm Password</label>
+        </div>
+        <div class="my-6">
+          <button type="submit" class="w-full rounded-md bg-yellow-400 px-3 py-4 text-black font-semibold focus:bg-yellow-600
+                                       focus:outline-none">Sign up</button>
+        </div>
+        <p class="text-center text-sm text-gray-500">Already have an account?
+          <a href="#"
+             class="font-semibold text-gray-600 hover:underline focus:text-gray-800 focus:outline-none">Sign
+            in
+          </a>.
+        </p>
+      </form>
     </div>
   </div>
 </div>

@@ -1,8 +1,8 @@
-import {Member} from "./Member";
+import {User} from "./User";
 
 export interface Rating {
     id: number;
     note: number;
     comment: string;
-    member: Member;
+    user: User;
 }

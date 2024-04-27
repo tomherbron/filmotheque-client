@@ -1,41 +1,47 @@
-<nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
+<nav class="flex justify-between px-20 py-10 items-center bg-white">
+  <div class="flex items-center flex-shrink-0 text-black mr-6">
     <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
     <a routerLink="/" routerLinkActive="active" class="cursor-pointer">
       <span class="font-semibold text-xl tracking-tight">Filmothèque</span>
     </a>
   </div>
-  <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded text-blue-500 border-blue-400 hover:text-white hover:border-white">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <div class="text-sm lg:flex-grow">
-      <a routerLink="/login" routerLinkActive="active" class="block mt-4 lg:inline-block lg:mt-0 text-yellow-400 text-base hover:text-yellow-600 mr-4">
-        Login
-      </a>
-      <a routerLink="/register" routerLinkActive="active" class="block mt-4 lg:inline-block lg:mt-0 text-yellow-400 text-base hover:text-yellow-600 mr-4">
-        Register
-      </a>
-      <ng-container *ngIf="isAuthenticated()">
-        <a routerLink="/" routerLinkActive="active" class="block mt-4 lg:inline-block lg:mt-0 text-yellow-400 text-base hover:text-yellow-600 mr-4">
-          Movies
-        </a>
-        <a routerLink="/" routerLinkActive="active" class="block mt-4 lg:inline-block lg:mt-0 text-yellow-400 text-base hover:text-yellow-600 mr-4">
-          Profile
-        </a>
-      </ng-container>
+  <div class="flex items-center">
+    <div class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pt-0.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input class="ml-2 outline-none bg-transparent font-" type="text" name="search" id="search" placeholder="Search..." />
     </div>
-    <ng-container *ngIf="isAuthenticated()">
-      <div>
-        <button routerLink="/add-movie" class="bg-yellow-400 hover:bg-yellow-600 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center">
-          <svg class="fill-current h-5 w-5 mr-2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 2c-.276 0-.5.224-.5.5v7.5H3.5c-.276 0-.5.224-.5.5s.224.5.5.5H10v6.5c0 .276.224.5.5.5s.5-.224.5-.5V11h6.5c.276 0 .5-.224.5-.5s-.224-.5-.5-.5H11V3.5c0-.276-.224-.5-.5-.5z"/>
-          </svg>
-          Add movie
-        </button>
-      </div>
-    </ng-container>
+    <ul class="flex items-center space-x-6">
+      <li *ngIf="!isAuthenticated()" class="font-semibold text-gray-900">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="!isAuthenticated()" class="font-semibold text-gray-900">
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="font-semibold text-gray-900">
+        <a routerLink="/" routerLinkActive="active">Movies</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="font-semibold text-gray-900">
+        <a (click)="logOut()" routerLink="/login" routerLinkActive="active">Logout</a>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+        </svg>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      </li>
+    </ul>
   </div>
 </nav>
