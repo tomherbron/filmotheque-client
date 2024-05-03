@@ -6,7 +6,7 @@ import {RouterLink} from "@angular/router";
 import {MovieDetailsComponent} from "../movie-details/movie-details.component";
 
 @Component({
-  selector: 'app-movie-list',
+  selector: 'app-movies-list',
   standalone: true,
   imports: [
     NgForOf,
@@ -14,10 +14,10 @@ import {MovieDetailsComponent} from "../movie-details/movie-details.component";
     RouterLink,
     MovieDetailsComponent
   ],
-  templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.css'
+  templateUrl: './movies-list.component.html',
+  styleUrl: './movies-list.component.css'
 })
-export class MovieListComponent implements OnInit {
+export class MoviesListComponent implements OnInit {
 
   movies: Movie[] | undefined;
   constructor(private movieService: MovieService) {
